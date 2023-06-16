@@ -1,7 +1,9 @@
 #include <stdio.h>
-/*
- * main - using void because we are not accepting any inputs
- * Return: 0 for code to function
+
+/**
+ * main - Entry point
+ * 
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
