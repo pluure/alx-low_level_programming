@@ -2,13 +2,21 @@
 #include <string.h>
 
 /**
- *main - Write a program tha prints the alphabets in lower case.
- *
+ *main - Write a program tha prints the alphabets in lower and uppercase.
  *
  * Return: Always (0)
  */
 int main(void)
 {
-	int i;
-	for (i = 97; i < 123 
+	char letter;
+
+	for (letter = 'a'; letter <= 'z'; letter++)
+	{
+		if (letter != 'e' && letter != 'q')
+			putchar(letter);
+	}
+
+	putchar('\n');
+
+	return (0);
 }
