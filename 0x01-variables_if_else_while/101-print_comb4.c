@@ -2,7 +2,7 @@
 /**
  * main- Printing all possible different combinations of 3 digits
  *
- * Return> Always 0.
+ * Return: Always 0.
  */
 int main(void)
 {
@@ -27,6 +27,7 @@ int main(void)
 		}
 	}
 	putchar('\n');
+
 	return (0);
 
 }
