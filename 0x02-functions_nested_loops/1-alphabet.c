@@ -1,9 +1,9 @@
 #include "main.h"
+
 /**
- *main - a function that prints the alphabets in lowercase.
- *
- *
+ * print_alphabet - Prints all lower case alphabets.
  */
+
 void print_alphabet(void)
 {
 char letter;
