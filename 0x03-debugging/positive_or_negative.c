@@ -1,9 +1,8 @@
 #include "main.h"
 
 /**
- * main - Printing a random number.
- *
- * this program azumes a random number and outputs results.
+ * positive_or_negative - Checks whether its positive or negative integer.
+ * @i : the integer to be entered.
  *
  *
  */
