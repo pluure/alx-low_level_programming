@@ -5,35 +5,25 @@
  * Return: Always 0.
  *
  */
+
 int main(void)
 {
-	int num;
+	int i;
 
-	num = 0
-		while (num < 100)
-		{
-			num++;
-			if ((num % 3) != 0 && (num % 5) != 0)
-			{
-				printf("%d", num);
-			}
-			else if ((num % 3) == 0 && (num % 5) != 0)
-			{
-				printf("Fizz");
-			}
-			else if ((num % 3) != 0 && (num % 5) == 0)
-			{
-				printf("Buzz");
-			}
-			else
-			{
-				printf("FizzBuzz");
-			}
-			if (num < 100)
-				putchar(32);
-		}
-	putchar('\n');
+	for (i = 1; i <= 100; i++)
+
+	{
+		if (i % 15 == 0)
+			printf("FizzBuzz");
+		else if (i % 3 == 0)
+			printf("Fizz");
+		else if (i % 5 == 0)
+			printf("Buzz");
+		else
+			printf("%i", i);
+		if (i < 100)
+			printf(" ");
+	}
+	printf("\n");
 	return (0);
-
-
 }
