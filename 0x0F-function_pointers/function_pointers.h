@@ -10,4 +10,6 @@ int int_index(int *array, int size, int (*cmp)(int));
 
 int _putchar(char c);
 
+int main(int argc, char *argv[]);
+
 #endif /* _function_pointers_h_ */
