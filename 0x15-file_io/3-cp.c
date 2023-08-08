@@ -1,4 +1,7 @@
-#include "main.h"
+#include <fcntl.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 #define BUFSIZE 1024
 /**
  * _close - function to close a file
