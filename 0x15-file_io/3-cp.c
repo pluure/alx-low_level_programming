@@ -11,7 +11,7 @@
 int _close(int fd)
 {
 	if (!close(fd))
-	return (0);
+		return (0);
 	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 	return (-1);
 
@@ -26,10 +26,10 @@ int _close(int fd)
  */
 ssize_t _read(const char *filename, int fd, char *buf, size_t count)
 {
-	 ssize_t bytes_to_read = read(fd, buf, count);
+	ssize_t bytes_to_read = read(fd, buf, count);
 
 	if (bytes_to_read > -1)
-	return (bytes_to_read);
+		return (bytes_to_read);
 	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
 	return (-1);
 
@@ -98,5 +98,4 @@ int main(int argc, const char *argv[])
 	}
 	if (_close(fd_i) || _close(fd_o) < 0)
 		exit(100);
-	return (0);
-
+	return (0)
