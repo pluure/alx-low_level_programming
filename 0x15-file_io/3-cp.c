@@ -19,7 +19,7 @@ int _close(int fd)
  * @fd: file descriptor
  * @buf: buffer file
  * @count: count number
- * Return: bytes read or return -1 as failure
+ * Return: bytes read or return 0 as failure
  */
 ssize_t _read(const char *filename, int fd, char *buf, size_t count)
 {
@@ -93,7 +93,7 @@ int main(int argc, const char *argv[])
 			exit(99);
 		}
 	}
-	if ((_close(fd_i) | _close(fd_o)) < 0)
+	if (_close(fd_i) || _close(fd_o) < 0)
 		exit(100);
 	return (0);
 }
