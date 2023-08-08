@@ -99,4 +99,4 @@ int main(int argc, const char *argv[])
 	if (_close(fd_i) || _close(fd_o) < 0)
 		exit(100);
 	return (0);
-}
+
