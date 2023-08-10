@@ -86,4 +86,66 @@ void print_data(unsigned char *e_ident)
 	}
 }
 /**
- * print_version - 
+ * print_version - printing the ELF header version
+ * @e_ident: a pointer
+ */
+void print_version(unsigned char *e_ident)
+{
+	printf("Version: %d", e_ident[EI_VERSION]);
+
+	switch (e_ident[EI_VERSION])
+	{
+		case EV_CURRENT:
+			printf("(current)\n");
+			break;
+		default:
+			printf("\n");
+			break;
+	}
+}
+/**
+ * print_osabi - printing the osabi
+ * @e_ident: A pointer.
+ */
+void print_osabi(unsigned char *e_ident)
+{
+	printf("OS/ABI: ");
+
+	switch (e_ident[EI_OSABI])
+	{
+		case ELFOSABI_NONE:
+			printf("UNIX - system V\n");
+			break;
+		case ELFOSABI_HPUX:
+			printf("UNIX - HP-UX\n");
+			break;
+		case ELFOSABI_NETBSD:
+			printf("UNIX - NetBSD\n");
+			break;
+		case ELFOSABI_LINUX:
+			printf("UNIX - Linux\n");
+			break;
+		case ELFOSABI_SOLARIS:
+			printf("UNIX -solaris\n");
+			break;
+		case ELFOSABI_IRIX:
+			printf("UNIX - IRIX\n");
+			break;
+		case ELFOSABI_FREEBSD:
+			printf("UNIX - FreeBSD\n");
+			break;
+		case ELFOSABI_TRU64:
+			printf("UNIX - TRU64\n");
+			break;
+		case ELFOSABI_ARM:
+			printf("ARM\n");
+			break;
+		case ELFOSABI_STANDALONE:
+			printf("Standalone app\n");
+			break;
+		default:
+			printf("<unknown: %x>\n", e_ident[EI_OSABI]);
+	}
+
+
+}
