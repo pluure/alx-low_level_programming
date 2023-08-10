@@ -1,14 +1,4 @@
 #include "main.h"
-void print_class(unsigned char *e_ident);
-void print_data(unsigned char *e_ident);
-void print_version(unsigned char *e_ident);
-void print_abi(unsigned char *e_ident);
-void check_elf(unsigned char *e_ident);
-void print_magic(unsigned char *e_ident);
-void print_entry(unsigned long int e_entry, unsigned char *e_ident);
-void close_elf(int elf);
-void print_osabi(unsigned char *e_ident);
-void print_type(unsigned int e_type, unsigned char *e_ident);
 /**
  * check_elf - checking for an ELF file
  * @e_ident: a pointer to numbers
@@ -29,6 +19,7 @@ void check_elf(unsigned char *e_ident)
 		}
 	}
 }
+
 /**
  * print_magic - printing of magic numbers ina an ELF header
  * @e_ident: a pointer
@@ -48,6 +39,7 @@ void print_magic(unsigned char *e_ident)
 			printf(" ");
 	}
 }
+
 /**
  * print_class - printing ELF header class
  * @e_ident: pointer
@@ -71,6 +63,7 @@ void print_class(unsigned char *e_ident)
 			printf("<unknown: %x>\n", e_ident[EI_CLASS]);
 	}
 }
+
 /**
  * print_data - printing an ELF header data
  * @e_ident: a pointer
@@ -94,6 +87,7 @@ void print_data(unsigned char *e_ident)
 			printf("<unknown: %x>\n", e_ident[EI_CLASS]);
 	}
 }
+
 /**
  * print_version - printing the ELF header version
  * @e_ident: a pointer
@@ -112,6 +106,7 @@ void print_version(unsigned char *e_ident)
 			break;
 	}
 }
+
 /**
  * print_osabi - printing the osabi
  * @e_ident: A pointer.
@@ -156,6 +151,7 @@ void print_osabi(unsigned char *e_ident)
 			printf("<unknown: %x>\n", e_ident[EI_OSABI]);
 	}
 }
+
 /**
  * print_abi - printing ELF ABI header version
  * @e_ident: a pointer
@@ -163,8 +159,8 @@ void print_osabi(unsigned char *e_ident)
 void print_abi(unsigned char *e_ident)
 {
 	printf("ABI version: %d\n", e_ident[EI_ABIVERSION]);
-
 }
+
 /**
  * print_type - prints the ELf header type
  * @e_type: ELF type
@@ -197,6 +193,7 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 			printf("<unknown: %x>\n", e_type);
 	}
 }
+
 /**
  * print_entry - prints the ELF header entry point
  * @e_entry: the address entry point
@@ -212,23 +209,25 @@ void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 		e_entry = (e_entry << 16) | (e_entry >> 16);
 	}
 	if (e_ident[EI_CLASS] == ELFCLASS32)
-	printf("%#x\n", (unsigned int)e_entry);
+		printf("%#x\n", (unsigned int)e_entry);
 
 	else
 		printf("%#lx\n", e_entry);
 }
+
 /**
  * close_elf - closes an elf file
  * @elf: file descriptor for the elf file
  */
 void close_elf(int elf)
 {
-if (close(elf) == -1)
-{
-dprintf(STDERR_FILENO, "Error: can't close fd %d\n", elf);
-exit(98);
+	if (close(elf) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: can't close fd %d\n", elf);
+		exit(98);
+	}
 }
-}
+
 /**
  * main - to show information in an elf header
  * @argc: number of characters in system
