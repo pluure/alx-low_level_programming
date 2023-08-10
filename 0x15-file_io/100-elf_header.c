@@ -146,6 +146,13 @@ void print_osabi(unsigned char *e_ident)
 		default:
 			printf("<unknown: %x>\n", e_ident[EI_OSABI]);
 	}
-
+}
+/**
+ * print_abi - printing ELF ABI header version
+ * @e_ident: a pointer
+ */
+void print_abi(unsigned char *e_ident)
+{
+	printf("ABI version: %d\n", e_ident[EI_ABIVERSION]);
 
 }
