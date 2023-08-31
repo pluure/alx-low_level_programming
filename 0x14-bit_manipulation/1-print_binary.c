@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include "main.h"
+#include <stdio.h>
 /**
  * print_binary - a function that prints the representation number
  * @n: unsigned long integer
@@ -11,7 +11,7 @@ void print_binary(unsigned long int n)
 
 	for (a = 63; a >= 0; a--)
 	{
-		new = n >> a;
+		new =  n >> a;
 		if (new & 1)
 		{
 			_putchar('1');
@@ -19,9 +19,9 @@ void print_binary(unsigned long int n)
 		}
 		else if (count)
 			_putchar('0');
+
 	}
 	if (!count)
 		_putchar('0');
-
 
 }
