@@ -38,9 +38,9 @@ void _close(int fd)
 }
 
 /**
- * _read - read from a file and print an error message upon failure
- * @fd: the file descriptor to read from
- * @buf: the buffer to write to
+ * _read - read from a file
+ * @fd: the file descriptor
+ * @buf: the buffer
  * @count: the number of bytes to read
  */
 void _read(int fd, char *buf, size_t count)
